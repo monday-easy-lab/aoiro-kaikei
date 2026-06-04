@@ -191,7 +191,7 @@ export default function App() {
               padding: "4px 12px", transition: "color 0.15s",
             }}
           >
-            <span style={{ fontSize: activeBottomTab === t.id ? 26 : 22, transition: "font-size 0.15s" }}>{t.icon}</span>
+            <span style={{ fontSize: 22 }}>{t.icon}</span>
             <span>{t.label}</span>
           </button>
         ))}
