@@ -4,7 +4,13 @@
 
 **個人事業主のための、いちばんシンプルな青色申告アプリ**
 
-freee を開いて 3 秒で閉じたことがある人へ。
+会計ソフトを開いた瞬間、
+
+「複式簿記」
+「借方・貸方」
+
+という文字を見て、
+そっと閉じたことがある人へ。
 
 [![Test](https://github.com/monday-easy-lab/aoiro-kaikei/actions/workflows/deploy.yml/badge.svg)](https://github.com/monday-easy-lab/aoiro-kaikei/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
