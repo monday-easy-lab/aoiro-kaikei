@@ -75,6 +75,16 @@ export default function Dashboard({ entries, fy, opening }) {
         </div>
       )}
 
+      {(balances["205"] || 0) > 0 && (
+        <div
+          style={{ ...S.card, background: "#fef2f2", borderColor: "#fca5a5" }}
+        >
+          <p style={{ margin: 0, fontSize: 13, color: "#dc2626" }}>
+            💳 クレジットカードの未払い残高が <strong>¥{fmt(balances["205"])}</strong> あります
+          </p>
+        </div>
+      )}
+
       {cm && (
         <div style={S.card}>
           <h3 style={S.cardTitle}>{currentMonth}月のまとめ</h3>

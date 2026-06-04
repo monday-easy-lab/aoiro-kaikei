@@ -130,3 +130,34 @@ export function calcIncomeTax(income) {
   const b = brackets.find((x) => income <= x.limit);
   return Math.floor(income * b.rate - b.ded);
 }
+
+// ── 家事按分: 対象科目とデフォルト ──
+export const ANBUN_TARGET_ACCOUNTS = [
+  { code: "504", name: "地代家賃", hint: "仕事部屋の面積 ÷ 家全体の面積" },
+  { code: "505", name: "水道光熱費", hint: "仕事時間 ÷ 1日の時間（例: 8h/24h = 33%）" },
+  { code: "507", name: "通信費", hint: "仕事での利用割合" },
+  { code: "522", name: "車両費", hint: "仕事での走行距離 ÷ 総走行距離" },
+];
+
+// 按分後のPLを計算
+export function calcPLWithAnbun(entries, anbunRates = {}) {
+  const pl = calcPL(entries);
+  const adjustedExpenseRows = pl.expenseRows.map((row) => {
+    const rate = anbunRates[row.code];
+    if (rate != null && rate < 100) {
+      const adjusted = Math.floor(row.amount * rate / 100);
+      return { ...row, amountBeforeAnbun: row.amount, amount: adjusted, anbunRate: rate };
+    }
+    return row;
+  });
+  const totalExpense = adjustedExpenseRows.reduce((s, r) => s + r.amount, 0);
+  return {
+    ...pl,
+    expenseRows: adjustedExpenseRows,
+    totalExpenseBeforeAnbun: pl.totalExpense,
+    totalExpense,
+    netIncome: pl.totalRevenue - totalExpense,
+    netIncomeBeforeAnbun: pl.netIncome,
+    hasAnbun: Object.values(anbunRates).some((r) => r != null && r < 100),
+  };
+}

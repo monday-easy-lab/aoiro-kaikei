@@ -151,7 +151,7 @@ export default function App() {
           />
         )}
         {tab === "summary" && <AccountSummary entries={fyEntries} />}
-        {tab === "pl" && <ProfitLoss entries={fyEntries} />}
+        {tab === "pl" && <ProfitLoss entries={fyEntries} anbunRates={settings.anbunRates} />}
         {tab === "bs" && (
           <BalanceSheet entries={fyEntries} opening={opening} />
         )}
@@ -160,6 +160,7 @@ export default function App() {
             entries={fyEntries}
             deductionType={settings.deductionType}
             fy={settings.fy}
+            anbunRates={settings.anbunRates}
           />
         )}
         {tab === "settings" && (

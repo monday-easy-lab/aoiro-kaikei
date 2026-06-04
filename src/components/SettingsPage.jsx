@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { fmt, makeId } from "../lib/accounts.js";
-import { calcBalances, calcPL, closeYear } from "../lib/calc.js";
+import { calcBalances, calcPL, closeYear, ANBUN_TARGET_ACCOUNTS } from "../lib/calc.js";
 import { exportCSV, importCSV, exportBackup, parseBackup } from "../lib/csv.js";
 import { S } from "../styles.js";
 import { SectionTitle, ConfirmModal } from "./ui.jsx";
@@ -240,6 +240,50 @@ export default function SettingsPage({
             )}
           </div>
         )}
+      </div>
+
+      {/* ── 家事按分 ── */}
+      <div style={S.card}>
+        <h3 style={S.cardTitle}>🏠 家事按分の設定</h3>
+        <p style={{ margin: "0 0 16px", fontSize: 12, color: "#64748b" }}>
+          自宅を仕事にも使っている場合、経費の「事業で使っている割合」を設定してください。
+          日常の入力は全額で行い、損益計算書と所得税計算で自動的に按分されます。
+        </p>
+        {ANBUN_TARGET_ACCOUNTS.map((acct) => {
+          const rate = settings.anbunRates?.[acct.code];
+          const hasRate = rate != null && rate < 100;
+          return (
+            <div key={acct.code} style={{ marginBottom: 16, padding: "12px 16px", background: hasRate ? "#f0fdf4" : "#f8fafc", borderRadius: 8, border: `1px solid ${hasRate ? "#bbf7d0" : "#e2e8f0"}` }}>
+              <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
+                <div>
+                  <p style={{ margin: 0, fontSize: 14, fontWeight: 600 }}>{acct.name}</p>
+                  <p style={{ margin: "2px 0 0", fontSize: 11, color: "#94a3b8" }}>💡 {acct.hint}</p>
+                </div>
+                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                  <input
+                    type="range"
+                    min="0" max="100" step="5"
+                    value={rate ?? 100}
+                    onChange={(e) => {
+                      const v = Number(e.target.value);
+                      const rates = { ...(settings.anbunRates || {}) };
+                      if (v >= 100) { delete rates[acct.code]; }
+                      else { rates[acct.code] = v; }
+                      persistSettings({ ...settings, anbunRates: rates });
+                    }}
+                    style={{ width: 120, accentColor: "#2563eb" }}
+                  />
+                  <span style={{ fontSize: 16, fontWeight: 700, color: hasRate ? "#059669" : "#94a3b8", minWidth: 48, textAlign: "right" }}>
+                    {rate ?? 100}%
+                  </span>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+        <p style={{ margin: "8px 0 0", fontSize: 11, color: "#94a3b8" }}>
+          ※ 100%の科目は按分なし（全額事業経費）として扱います。確定申告時に損益計算書・所得税計算に反映されます。
+        </p>
       </div>
 
       {/* ── 年度締め ── */}

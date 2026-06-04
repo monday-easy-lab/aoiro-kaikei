@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 import {
   calcPL,
+  calcPLWithAnbun,
   calcBalances,
   closeYear,
   basicDeductionIncomeTax,
@@ -139,9 +140,9 @@ describe("calcBalances", () => {
     const bal = calcBalances(entries);
 
     const assets = (bal["101"] || 0) + (bal["102"] || 0) +
-      (bal["103"] || 0) + (bal["104"] || 0) + (bal["105"] || 0) + (bal["106"] || 0);
+      (bal["103"] || 0) + (bal["104"] || 0) + (bal["105"] || 0) + (bal["106"] || 0) + (bal["107"] || 0);
     const liabilities = (bal["201"] || 0) + (bal["202"] || 0) +
-      (bal["203"] || 0) + (bal["204"] || 0);
+      (bal["203"] || 0) + (bal["204"] || 0) + (bal["205"] || 0);
     const capital = bal["301"] || 0;
     const revenue = (bal["401"] || 0) + (bal["402"] || 0);
     const expenses = Object.entries(bal)
@@ -150,6 +151,32 @@ describe("calcBalances", () => {
 
     // 資産 = 負債 + 資本 + (収入 − 経費)
     expect(assets).toBe(liabilities + capital + revenue - expenses);
+  });
+
+  it("クレカ払い→引落の一連で残高が正しい", () => {
+    const entries = [
+      entry("102", "301", 500000), //  元入金
+      entry("510", "205", 10000), //   消耗品をクレカ購入（負債増）
+      entry("507", "205", 5000), //    通信費をクレカ購入
+      entry("205", "102", 15000), //   クレカ引落（負債消滅・預金減）
+    ];
+    const bal = calcBalances(entries);
+    expect(bal["205"]).toBe(0); //      クレカ残高ゼロ（全額引落済）
+    expect(bal["102"]).toBe(485000); // 預金: 500,000 − 15,000
+    expect(bal["510"]).toBe(10000); //  消耗品費
+    expect(bal["507"]).toBe(5000); //   通信費
+  });
+
+  it("電子マネーのチャージ→利用で残高が正しい", () => {
+    const entries = [
+      entry("102", "301", 300000), //  元入金
+      entry("107", "102", 20000), //   電子マネーにチャージ
+      entry("506", "107", 3000), //    交通費を電子マネーで支払
+    ];
+    const bal = calcBalances(entries);
+    expect(bal["107"]).toBe(17000); //  電子マネー残: 20,000 − 3,000
+    expect(bal["102"]).toBe(280000); // 預金: 300,000 − 20,000
+    expect(bal["506"]).toBe(3000); //   交通費
   });
 });
 
@@ -325,12 +352,12 @@ describe("実務シナリオ: フリーランスの1年間", () => {
 
     // 資産合計
     const totalAssets = [
-      "101", "102", "103", "104", "105", "106",
+      "101", "102", "103", "104", "105", "106", "107",
     ].reduce((s, c) => s + (bal[c] || 0), 0);
 
     // 負債合計 + 資本 + 収入 − 経費
     const totalLiab = [
-      "201", "202", "203", "204",
+      "201", "202", "203", "204", "205",
     ].reduce((s, c) => s + (bal[c] || 0), 0);
     const capital = bal["301"] || 0;
 
@@ -349,5 +376,46 @@ describe("実務シナリオ: フリーランスの1年間", () => {
     // 事業主貸・借はリセット
     expect(opening["104"]).toBeUndefined();
     expect(opening["203"]).toBeUndefined();
+  });
+});
+
+// ════════════════════════════════════════
+// calcPLWithAnbun（家事按分）
+// ════════════════════════════════════════
+describe("calcPLWithAnbun", () => {
+  it("按分なしの場合はcalcPLと同じ結果", () => {
+    const entries = [
+      entry("102", "401", 100000),
+      entry("504", "102", 50000),
+    ];
+    const pl = calcPLWithAnbun(entries, {});
+    expect(pl.netIncome).toBe(50000);
+    expect(pl.hasAnbun).toBe(false);
+  });
+
+  it("家賃50%按分で経費が半額になる", () => {
+    const entries = [
+      entry("102", "401", 1000000), // 売上 100万
+      entry("504", "102", 100000),  // 家賃 10万
+      entry("507", "102", 20000),   // 通信費 2万
+    ];
+    const pl = calcPLWithAnbun(entries, { "504": 50, "507": 40 });
+    expect(pl.hasAnbun).toBe(true);
+    // 家賃: 100,000 × 50% = 50,000
+    // 通信費: 20,000 × 40% = 8,000
+    expect(pl.totalExpense).toBe(50000 + 8000);
+    expect(pl.totalExpenseBeforeAnbun).toBe(120000);
+    expect(pl.netIncome).toBe(1000000 - 58000);
+    expect(pl.netIncomeBeforeAnbun).toBe(1000000 - 120000);
+  });
+
+  it("100%の科目は按分されない", () => {
+    const entries = [
+      entry("102", "401", 500000),
+      entry("504", "102", 80000),
+    ];
+    const pl = calcPLWithAnbun(entries, { "504": 100 });
+    expect(pl.hasAnbun).toBe(false);
+    expect(pl.totalExpense).toBe(80000);
   });
 });

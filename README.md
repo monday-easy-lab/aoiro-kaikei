@@ -22,7 +22,7 @@
 ---
 
 <!-- ダッシュボードのスクリーンショットをここに -->
-![ダッシュボード](docs/screenshots/dashboard.png)
+<!-- ![ダッシュボード](docs/screenshots/dashboard.png) -->
 
 ## 特徴
 
@@ -33,14 +33,12 @@
 📅 **年度締め** — 元入金の繰越計算を自動化（事業主貸・借の振替含む）  
 🔒 **完全オフライン** — データはブラウザの localStorage のみ。サーバー送信ゼロ
 
-
+<!-- 機能のスクリーンショットをここに（2列レイアウト推奨） -->
+<!--
 | かんたん入力 | 所得税計算 |
 |:---:|:---:|
 | ![かんたん入力](docs/screenshots/easy-entry.png) | ![所得税計算](docs/screenshots/tax-calc.png) |
-
-| 貸借対照表 |
-|:---:|
-| ![貸借対照表](docs/screenshots/balance-sheet.png) |
+-->
 
 ## クイックスタート
 

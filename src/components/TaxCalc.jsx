@@ -1,6 +1,6 @@
 import { fmt } from "../lib/accounts.js";
 import {
-  calcPL,
+  calcPLWithAnbun,
   basicDeductionIncomeTax,
   basicDeductionResidentTax,
   calcIncomeTax,
@@ -8,8 +8,8 @@ import {
 import { S } from "../styles.js";
 import { SectionTitle } from "./ui.jsx";
 
-export default function TaxCalc({ entries, deductionType, fy }) {
-  const { netIncome } = calcPL(entries);
+export default function TaxCalc({ entries, deductionType, fy, anbunRates }) {
+  const { netIncome, hasAnbun, netIncomeBeforeAnbun } = calcPLWithAnbun(entries, anbunRates || {});
 
   // 青色申告特別控除
   const deductionMax =
