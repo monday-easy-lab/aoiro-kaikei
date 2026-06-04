@@ -15,13 +15,18 @@ style.textContent = `
     margin: 0;
     -webkit-font-smoothing: antialiased;
   }
-  /* Mobile: hide table, show cards */
   .ledger-table { display: block; }
   .ledger-cards { display: none; }
+  .top-nav { display: flex; }
+  .bottom-nav { display: none; }
+  .main-content { padding-bottom: 0; }
   @media (max-width: 640px) {
     .ledger-table { display: none !important; }
     .ledger-cards { display: block !important; }
     .bs-grid { grid-template-columns: 1fr !important; }
+    .top-nav { display: none !important; }
+    .bottom-nav { display: flex !important; }
+    .main-content { padding-bottom: 72px !important; }
   }
 `;
 document.head.appendChild(style);

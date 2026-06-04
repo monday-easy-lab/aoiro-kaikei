@@ -6,7 +6,7 @@ import { SectionTitle, DashCard } from "./ui.jsx";
 
 const MONTHS = Array.from({ length: 12 }, (_, i) => i + 1);
 
-export default function Dashboard({ entries, fy, opening }) {
+export default function Dashboard({ entries, fy, opening, onNavigate }) {
   const monthlyData = useMemo(
     () =>
       MONTHS.map((m) => {
@@ -82,6 +82,32 @@ export default function Dashboard({ entries, fy, opening }) {
           <p style={{ margin: 0, fontSize: 13, color: "#dc2626" }}>
             💳 クレジットカードの未払い残高が <strong>¥{fmt(balances["205"])}</strong> あります
           </p>
+        </div>
+      )}
+
+      {/* ── クイックアクション ── */}
+      {onNavigate && (
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))", gap: 8, marginBottom: 16 }}>
+          {[
+            { id: "easy", icon: "➕", label: "取引を入力", color: "#1d4ed8" },
+            { id: "ledger", icon: "📒", label: "仕訳帳を見る", color: "#475569" },
+            { id: "pl", icon: "📈", label: "利益を見る", color: "#059669" },
+            { id: "tax", icon: "🧮", label: "税金を見る", color: "#dc2626" },
+          ].map((a) => (
+            <button
+              key={a.id}
+              onClick={() => onNavigate(a.id)}
+              style={{
+                display: "flex", flexDirection: "column", alignItems: "center", gap: 6,
+                padding: "16px 8px", border: "1px solid #e2e8f0", borderRadius: 12,
+                background: "#fff", cursor: "pointer", fontFamily: FONT,
+                transition: "all 0.15s", boxShadow: "0 1px 2px rgba(0,0,0,0.03)",
+              }}
+            >
+              <span style={{ fontSize: 24 }}>{a.icon}</span>
+              <span style={{ fontSize: 12, fontWeight: 600, color: a.color }}>{a.label}</span>
+            </button>
+          ))}
         </div>
       )}
 
