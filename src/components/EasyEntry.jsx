@@ -11,7 +11,7 @@ const PAY_METHODS = [
 { key: "emoney", label: "📱 電子マネー", code: "107" },
   { key: "personal", label: "🙋 個人立替", code: "203" },
 ];
-];
+
 
 // ── カテゴリ定義（ステップ1で表示）──
 const CATEGORIES = [
