@@ -170,7 +170,7 @@ export default function EasyEntry({ entries, persist, fy }) {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: 8 }}>
           {category.items.map((item) => (
             <button key={item.label} onClick={() => setSelected(item)} style={S.easyCard}>
-              <span style={{ fontSize: activeBottomTab === t.id ? 26 : 22, transition: "font-size 0.15s" }}>{t.icon}</span>
+             <span style={{ fontSize: 22 }}>{item.icon}</span>
               <div style={{ flex: 1 }}>
                 <p style={{ margin: 0, fontSize: 13, fontWeight: 600, color: "#1e293b" }}>{item.label}</p>
                 <p style={{ margin: "2px 0 0", fontSize: 11, color: "#94a3b8" }}>{item.desc}</p>
