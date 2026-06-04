@@ -103,7 +103,7 @@ export const S = {
     gap: 12,
     marginBottom: 16,
   },
-  formGrid: { display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 },
+  formGrid: { display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: 16 },
   formGroup: { display: "flex", flexDirection: "column", gap: 4, marginBottom: 8 },
   label: { fontSize: 12, fontWeight: 600, color: "#475569", fontFamily: FONT },
   input: {

@@ -89,7 +89,7 @@ export default function App() {
   return (
     <div style={S.root}>
       <header style={S.header}>
-        <div style={S.headerInner}>
+        <div style={{ ...S.headerInner, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <div style={S.logo}>
             <span style={S.logoMark}>帳</span>
             <div>
@@ -100,6 +100,18 @@ export default function App() {
               </p>
             </div>
           </div>
+          <button
+            onClick={() => { setTab("settings"); setEditId(null); }}
+            style={{
+              background: "rgba(255,255,255,0.15)", border: "none", borderRadius: 10,
+              width: 40, height: 40, fontSize: 20, cursor: "pointer",
+              display: "flex", alignItems: "center", justifyContent: "center",
+              color: "#fff", transition: "background 0.15s",
+            }}
+            title="設定"
+          >
+            ⚙️
+          </button>
         </div>
       </header>
 

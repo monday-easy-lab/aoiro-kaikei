@@ -66,7 +66,7 @@ export default function BalanceSheet({ entries, opening }) {
     <div>
       <SectionTitle icon="⚖️" title="貸借対照表" />
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
+      <div className="bs-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16 }}>
         {/* ── 資産の部 ── */}
         <div style={S.card}>
           <h3 style={{ ...S.cardTitle, color: "#2563eb" }}>資産の部</h3>

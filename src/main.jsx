@@ -15,6 +15,14 @@ style.textContent = `
     margin: 0;
     -webkit-font-smoothing: antialiased;
   }
+  /* Mobile: hide table, show cards */
+  .ledger-table { display: block; }
+  .ledger-cards { display: none; }
+  @media (max-width: 640px) {
+    .ledger-table { display: none !important; }
+    .ledger-cards { display: block !important; }
+    .bs-grid { grid-template-columns: 1fr !important; }
+  }
 `;
 document.head.appendChild(style);
 
