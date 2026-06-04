@@ -61,7 +61,7 @@ const CATEGORIES = [
   },
   {
     key: "living", label: "生活費", icon: "🏧", color: "#7c3aed",
-    desc: "事業主貸・事業主借",
+    desc: "個人の財布から支出・入金",
     items: [
       { label: "生活費を引き出した", debit: "104", credit: "102", icon: "🏧", desc: "事業口座→生活費（事業主貸）" },
       { label: "個人のお金を事業口座に入れた", debit: "102", credit: "203", icon: "💰", desc: "個人口座→事業口座への入金" },
@@ -146,7 +146,7 @@ export default function EasyEntry({ entries, persist, fy }) {
                 display: "flex", flexDirection: "column", alignItems: "center", gap: 8,
                 padding: "24px 16px", border: "2px solid #e2e8f0", borderRadius: 16,
                 background: "#fff", cursor: "pointer", fontFamily: FONT,
-                transition: "all 0.15s", boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
+                transition: "all 0.15s", boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
               }}
               onMouseEnter={(e) => { e.currentTarget.style.borderColor = cat.color; e.currentTarget.style.transform = "translateY(-2px)"; }}
               onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#e2e8f0"; e.currentTarget.style.transform = "none"; }}
@@ -170,7 +170,7 @@ export default function EasyEntry({ entries, persist, fy }) {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))", gap: 8 }}>
           {category.items.map((item) => (
             <button key={item.label} onClick={() => setSelected(item)} style={S.easyCard}>
-              <span style={{ fontSize: 22 }}>{item.icon}</span>
+              <span style={{ fontSize: activeBottomTab === t.id ? 26 : 22, transition: "font-size 0.15s" }}>{t.icon}</span>
               <div style={{ flex: 1 }}>
                 <p style={{ margin: 0, fontSize: 13, fontWeight: 600, color: "#1e293b" }}>{item.label}</p>
                 <p style={{ margin: "2px 0 0", fontSize: 11, color: "#94a3b8" }}>{item.desc}</p>
