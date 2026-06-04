@@ -8,7 +8,9 @@ const PAY_METHODS = [
   { key: "bank", label: "🏦 銀行振込", code: "102" },
   { key: "cash", label: "💵 現金", code: "101" },
   { key: "credit", label: "💳 クレカ", code: "205" },
-  { key: "emoney", label: "📱 電子マネー", code: "107" },
+{ key: "emoney", label: "📱 電子マネー", code: "107" },
+  { key: "personal", label: "🙋 個人立替", code: "203" },
+];
 ];
 
 // ── カテゴリ定義（ステップ1で表示）──
@@ -63,7 +65,7 @@ const CATEGORIES = [
     desc: "事業主貸・事業主借",
     items: [
       { label: "生活費を引き出した", debit: "104", credit: "102", icon: "🏧", desc: "事業口座→生活費（事業主貸）" },
-      { label: "生活費から立て替えた", debit: "102", credit: "203", icon: "💳", desc: "個人のお金で事業経費を払った（事業主借）" },
+      { label: "個人のお金を事業口座に入れた", debit: "102", credit: "203", icon: "💰", desc: "個人口座→事業口座への入金" },
     ],
   },
   {
@@ -222,9 +224,11 @@ export default function EasyEntry({ entries, persist, fy }) {
                   </button>
                 ))}
               </div>
-              {payMethod === "credit" && (
+              {(payMethod === "credit" || payMethod === "personal") && (
   <p style={{ margin: "6px 0 0", fontSize: 11, color: "#94a3b8" }}>
-    ※ 引落日に再入力する必要はありません。引落時は「資金移動→クレカの引き落とし」で処理します。
+    {payMethod === "credit"
+      ? "※ 引落日に再入力する必要はありません。引落時は「資金移動→クレカの引き落とし」で処理します。"
+      : "※ 個人のお金で事業の支払いをした場合に選択します。事業主借として処理されます。"}
   </p>
 )}
             </div>
