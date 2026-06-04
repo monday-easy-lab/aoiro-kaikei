@@ -222,6 +222,11 @@ export default function EasyEntry({ entries, persist, fy }) {
                   </button>
                 ))}
               </div>
+              {payMethod === "credit" && (
+  <p style={{ margin: "6px 0 0", fontSize: 11, color: "#94a3b8" }}>
+    ※ 引落日に再入力する必要はありません。引落時は「資金移動→クレカの引き落とし」で処理します。
+  </p>
+)}
             </div>
           )}
           <div style={{ ...S.formGroup, gridColumn: "1 / -1" }}>
