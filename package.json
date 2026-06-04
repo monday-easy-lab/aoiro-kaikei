@@ -1,0 +1,24 @@
+{
+  "name": "aoiro-kaikei",
+  "version": "1.0.0",
+  "description": "個人事業主向け青色申告かんたん会計アプリ",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "papaparse": "^5.4.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.0.0",
+    "vitest": "^4.1.8"
+  },
+  "license": "MIT"
+}
