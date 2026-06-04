@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { fmt, currentFY } from "../lib/accounts.js";
 import { calcPL, calcBalances } from "../lib/calc.js";
-import { S } from "../styles.js";
+import { S, FONT } from "../styles.js";
 import { SectionTitle, DashCard } from "./ui.jsx";
 
 const MONTHS = Array.from({ length: 12 }, (_, i) => i + 1);
