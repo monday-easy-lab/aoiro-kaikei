@@ -41,8 +41,8 @@ export default function SettingsPage({
   // ── 元入金仕訳の自動作成 ──
   const generateMotoirekin = () => {
     const amt = Number(motoirekinAmount);
-    if (!Number.isFinite(amt) || amt <= 0) {
-      showMsg(setMotoMsg, "⚠ 金額を入力してください");
+    if (!Number.isFinite(amt) || amt < 0) {
+      showMsg(setMotoMsg, "⚠ 正しい金額を入力してください");
       return;
     }
     persist([
@@ -172,7 +172,7 @@ export default function SettingsPage({
 
       {/* ── 元入金 ── */}
       <div style={S.card}>
-        <h3 style={S.cardTitle}>💼 元入金（開業時資金）</h3>
+        <h3 style={S.cardTitle}>💼 元入金（開業時の事業用資金）</h3>
         {hasMotoirekinEntry || actualMotoirekin !== 0 ? (
           <div
             style={{
@@ -190,12 +190,11 @@ export default function SettingsPage({
           </div>
         ) : (
           <div>
-            <p
-              style={{ margin: "0 0 12px", fontSize: 12, color: "#64748b" }}
-            >
-              開業時に事業用口座に入れた金額を入力すると、「普通預金 ／
-              元入金」の仕訳が自動作成されます。
-            </p>
+            <div style={{ padding: "12px 16px", background: "#f8fafc", borderRadius: 8, marginBottom: 12, fontSize: 12, color: "#64748b", lineHeight: 1.8 }}>
+              💡 開業時に事業用として用意したお金です。<br />
+              💡 わからない場合や、個人口座・個人資金から始めた場合は <strong>0円のままで大丈夫</strong>です。<br />
+              💡 後から個人のお金で事業費を支払った場合は「🙋 個人立替（事業主借）」で記録できます。
+            </div>
             <div
               style={{
                 display: "flex",
@@ -218,7 +217,7 @@ export default function SettingsPage({
                 <input
                   type="number"
                   value={motoirekinAmount}
-                  placeholder="300000"
+                  placeholder="0"
                   onChange={(e) => setMotoirekinAmount(e.target.value)}
                   style={{ ...S.input, width: 180 }}
                 />
@@ -240,7 +239,6 @@ export default function SettingsPage({
             )}
           </div>
         )}
-      </div>
 
       {/* ── 家事按分 ── */}
       <div style={S.card}>
