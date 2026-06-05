@@ -165,7 +165,7 @@ export const S = {
     transition: "all 0.15s",
     boxShadow: "0 1px 2px rgba(0,0,0,0.03)",
   },
-  payBtn: {
+ payBtn: {
     padding: "8px 16px",
     border: "1px solid #d1d5db",
     borderRadius: 8,
@@ -173,6 +173,8 @@ export const S = {
     cursor: "pointer",
     fontSize: 13,
     fontFamily: FONT,
+    outline: "none",
+    WebkitTapHighlightColor: "transparent",
   },
   payBtnActive: {
     background: "#eff6ff",
