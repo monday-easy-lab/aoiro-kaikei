@@ -217,7 +217,7 @@ export default function EasyEntry({ entries, persist, fy }) {
               <label style={S.label}>支払方法</label>
               <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
                 {PAY_METHODS.map((pm) => (
-                  <button key={pm.key} onClick={() => setPayMethod(pm.key)}
+                  <button type="button" key={pm.key} onClick={() => setPayMethod(pm.key)}
                     style={{ ...S.payBtn, ...(payMethod === pm.key ? S.payBtnActive : {}) }}>
                     {pm.label}
                   </button>
