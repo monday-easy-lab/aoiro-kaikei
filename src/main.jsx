@@ -20,6 +20,12 @@ style.textContent = `
   .top-nav { display: flex; }
   .bottom-nav { display: none; }
   .main-content { padding-bottom: 0; }
+  button:focus, button:focus-visible {
+    outline: none;
+  }
+  button::-moz-focus-inner {
+    border: 0;
+  }
   @media (max-width: 640px) {
     .ledger-table { display: none !important; }
     .ledger-cards { display: block !important; }
