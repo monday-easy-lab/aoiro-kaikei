@@ -123,6 +123,7 @@ export default function App() {
               </p>
             </div>
           </div>
+          <div style={{ display: "flex", gap: 8 }}></div>
           <button
             onClick={() => switchTab("help")}
             style={{
@@ -146,6 +147,7 @@ export default function App() {
             title="設定"
           >
             ⚙️
+            </div>
           </button>
         </div>
       </header>
