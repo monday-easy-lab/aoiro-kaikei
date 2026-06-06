@@ -111,7 +111,7 @@ export default function App() {
   return (
     <div style={S.root}>
       {/* ── Header ── */}
-      <header style={S.header}>
+     <header style={S.header}>
         <div style={{ ...S.headerInner, display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <div style={S.logo}>
             <span style={S.logoMark}>帳</span>
@@ -123,32 +123,32 @@ export default function App() {
               </p>
             </div>
           </div>
-          <div style={{ display: "flex", gap: 8 }}></div>
-          <button
-            onClick={() => switchTab("help")}
-            style={{
-              background: "rgba(255,255,255,0.15)", border: "none", borderRadius: 10,
-              width: 40, height: 40, fontSize: 20, cursor: "pointer",
-              display: "flex", alignItems: "center", justifyContent: "center",
-              color: "#fff", transition: "background 0.15s",
-            }}
-            title="使い方ガイド"
-          >
-            ❓
-          </button>
-          <button
-            onClick={() => switchTab("settings")}
-            style={{
-              background: "rgba(255,255,255,0.15)", border: "none", borderRadius: 10,
-              width: 40, height: 40, fontSize: 20, cursor: "pointer",
-              display: "flex", alignItems: "center", justifyContent: "center",
-              color: "#fff", transition: "background 0.15s",
-            }}
-            title="設定"
-          >
-            ⚙️
-            </div>
-          </button>
+          <div style={{ display: "flex", gap: 8 }}>
+            <button
+              onClick={() => switchTab("help")}
+              style={{
+                background: "rgba(255,255,255,0.15)", border: "none", borderRadius: 10,
+                width: 40, height: 40, fontSize: 20, cursor: "pointer",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                color: "#fff", transition: "background 0.15s",
+              }}
+              title="使い方ガイド"
+            >
+              ❓
+            </button>
+            <button
+              onClick={() => switchTab("settings")}
+              style={{
+                background: "rgba(255,255,255,0.15)", border: "none", borderRadius: 10,
+                width: 40, height: 40, fontSize: 20, cursor: "pointer",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                color: "#fff", transition: "background 0.15s",
+              }}
+              title="設定"
+            >
+              ⚙️
+            </button>
+          </div>
         </div>
       </header>
 
