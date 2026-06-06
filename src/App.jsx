@@ -40,7 +40,7 @@ const BOTTOM_TABS = [
   { id: "easy", label: "入力", icon: "➕" },
   { id: "ledger", label: "仕訳", icon: "📒" },
   { id: "reports", label: "集計", icon: "📊" },
-  { id: "settings", label: "設定", icon: "⚙️" },
+  { id: "more", label: "その他", icon: "•••" },
 ];
 
 // Reports sub-pages (集計の中身)

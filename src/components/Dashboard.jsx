@@ -49,7 +49,7 @@ export default function Dashboard({ entries, fy, opening, onNavigate }) {
         icon="📊"
         title={isPastFY ? `${fy}年度 実績` : "ダッシュボード"}
       />
-      <div style={S.dashGrid}>
+      <div className="dash-grid" style={S.dashGrid}>
         <DashCard
           label="💰 手元資金"
           value={totalCash}

@@ -33,6 +33,7 @@ style.textContent = `
     .top-nav { display: none !important; }
     .bottom-nav { display: flex !important; }
     .main-content { padding-bottom: 72px !important; }
+    .dash-grid { grid-template-columns: 1fr 1fr !important; }
   }
 `;
 document.head.appendChild(style);
