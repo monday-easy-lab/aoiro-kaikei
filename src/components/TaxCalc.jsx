@@ -248,6 +248,47 @@ export default function TaxCalc({ entries, deductionType, fy, anbunRates }) {
         <br />※ 住民税の基礎控除は所得税と異なり43万円（改正なし）で計算しています。
         均等割は自治体により異なる場合があります。
       </p>
+      <details style={{ ...S.card, marginTop: 16, cursor: "pointer" }}>
+        <summary style={{ fontSize: 14, fontWeight: 600, color: "#475569", padding: "4px 0" }}>
+          📋 確定申告書を提出するには
+        </summary>
+        <div style={{ marginTop: 12, fontSize: 13, color: "#64748b", lineHeight: 1.8 }}>
+          <p style={{ margin: "0 0 12px" }}>
+            このアプリは帳簿作成・税額の概算用です。確定申告書の作成やe-Taxでの電子申告には、対応した会計ソフトをご利用ください。
+          </p>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 12 }}>
+            
+              href="https://px.a8.net/svt/ejp?a8mat=4B5Q82+92V0NU+3SPO+9FDI8Y""
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              style={{
+                display: "block", padding: "16px 20px", border: "1px solid #e2e8f0",
+                borderRadius: 12, background: "#fff", textDecoration: "none",
+                transition: "all 0.15s", boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
+              }}
+            >
+              <p style={{ margin: 0, fontSize: 15, fontWeight: 700, color: "#1e293b" }}>freee会計</p>
+              <p style={{ margin: "4px 0 0", fontSize: 12, color: "#94a3b8" }}>個人事業主向けクラウド会計ソフト</p>
+            </a>
+            
+              href="href="https://px.a8.net/svt/ejp?a8mat=4B5Q82+8SQNDM+3SPO+C8KZDE""
+              target="_blank"
+              rel="noopener noreferrer sponsored"
+              style={{
+                display: "block", padding: "16px 20px", border: "1px solid #e2e8f0",
+                borderRadius: 12, background: "#fff", textDecoration: "none",
+                transition: "all 0.15s", boxShadow: "0 1px 3px rgba(0,0,0,0.04)",
+              }}
+            >
+              <p style={{ margin: 0, fontSize: 15, fontWeight: 700, color: "#1e293b" }}>マネーフォワード クラウド確定申告</p>
+              <p style={{ margin: "4px 0 0", fontSize: 12, color: "#94a3b8" }}>確定申告・e-Tax対応</p>
+            </a>
+          </div>
+          <p style={{ margin: "12px 0 0", fontSize: 11, color: "#94a3b8" }}>※ 上記は外部サービスへのリンクです（PR）</p>
+          <img width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4B5Q82+8SQNDM+3SPO+C8KZDE" alt="" />
+          <img width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4B5Q82+92V0NU+3SPO+9FDI8Y" alt="" />
+        </div>
+      </details>
     </div>
   );
 }
