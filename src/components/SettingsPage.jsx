@@ -143,7 +143,7 @@ export default function SettingsPage({
               }
               style={S.input}
             >
-              {[2024, 2025, 2026, 2027].map((y) => (
+              {Array.from({ length: 10 }, (_, i) => new Date().getFullYear() - 7 + i).map((y) => (
                 <option key={y} value={y}>
                   {y}年（令和{y - 2018}年）
                 </option>
