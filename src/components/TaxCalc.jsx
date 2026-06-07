@@ -258,7 +258,7 @@ export default function TaxCalc({ entries, deductionType, fy, anbunRates }) {
           </p>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))", gap: 12 }}>
             
-              href="https://px.a8.net/svt/ejp?a8mat=4B5Q82+92V0NU+3SPO+9FDI8Y""
+              href="https://px.a8.net/svt/ejp?a8mat=4B5Q82+92V0NU+3SPO+9FDI8Y"
               target="_blank"
               rel="noopener noreferrer sponsored"
               style={{
@@ -271,7 +271,7 @@ export default function TaxCalc({ entries, deductionType, fy, anbunRates }) {
               <p style={{ margin: "4px 0 0", fontSize: 12, color: "#94a3b8" }}>個人事業主向けクラウド会計ソフト</p>
             </a>
             
-              href="href="https://px.a8.net/svt/ejp?a8mat=4B5Q82+8SQNDM+3SPO+C8KZDE""
+              href="https://px.a8.net/svt/ejp?a8mat=4B5Q82+8SQNDM+3SPO+C8KZDE"
               target="_blank"
               rel="noopener noreferrer sponsored"
               style={{
@@ -284,10 +284,6 @@ export default function TaxCalc({ entries, deductionType, fy, anbunRates }) {
               <p style={{ margin: "4px 0 0", fontSize: 12, color: "#94a3b8" }}>確定申告・e-Tax対応</p>
             </a>
           </div>
-          <p style={{ margin: "12px 0 0", fontSize: 11, color: "#94a3b8" }}>※ 上記は外部サービスへのリンクです（PR）</p>
-          <img width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4B5Q82+8SQNDM+3SPO+C8KZDE" alt="" />
-          <img width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4B5Q82+92V0NU+3SPO+9FDI8Y" alt="" />
-        </div>
       </details>
     </div>
   );
