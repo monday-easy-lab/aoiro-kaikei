@@ -143,7 +143,12 @@ export default function SettingsPage({
               }
               style={S.input}
             >
-              {Array.from({ length: 10 }, (_, i) => new Date().getFullYear() - 7 + i).map((y) => (
+              {(() => {
+  const now = new Date().getFullYear();
+  const dataYears = [...new Set(entries.map(e => Number(e.date?.split("-")[0])).filter(Boolean))];
+  const years = [...new Set([...dataYears, now, now + 1])].sort();
+  return years;
+})().map((y) => (
                 <option key={y} value={y}>
                   {y}年（令和{y - 2018}年）
                 </option>
