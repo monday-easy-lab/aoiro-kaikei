@@ -75,6 +75,8 @@ const CATEGORIES = [
       { label: "車両を購入した", debit: "106", credit: "102", icon: "🚙", desc: "事業用自動車の取得" },
       { label: "減価償却を計上した（備品）", debit: "511", credit: "105", icon: "📉", desc: "工具器具備品の減価償却", cashless: true },
       { label: "減価償却を計上した（車両）", debit: "511", credit: "106", icon: "📉", desc: "車両運搬具の減価償却", cashless: true },
+      { label: "開業費計上", d: "108", c: "203" },
+      { label: "開業費償却", d: "512", c: "108" },
     ],
   },
   {

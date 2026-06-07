@@ -39,6 +39,7 @@ export const ACCOUNTS = {
     { code: "105", name: "工具器具備品" },
     { code: "106", name: "車両運搬具" },
     { code: "107", name: "電子マネー" },
+    { code: "108", name: "開業費" },
   ],
   liability: [
     { code: "201", name: "買掛金" },
