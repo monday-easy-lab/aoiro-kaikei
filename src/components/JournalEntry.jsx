@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { ACCOUNTS, makeId } from "../lib/accounts.js";
 import { S, FONT } from "../styles.js";
-import { SectionTitle } from "./ui.jsx";
+import { SectionTitle, AmountInput } from "./ui.jsx";
 
 export default function JournalEntry({ entries, persist, fy, editId, setEditId }) {
   const emptyForm = useMemo(
@@ -162,14 +162,10 @@ export default function JournalEntry({ entries, persist, fy, editId, setEditId }
           </div>
           <div style={S.formGroup}>
             <label style={S.label}>金額（円）</label>
-            <input
-              type="number"
+            <AmountInput
               value={form.amount}
+              onChange={(v) => setForm((f) => ({ ...f, amount: v }))}
               placeholder="0"
-              onChange={(e) =>
-                setForm((f) => ({ ...f, amount: e.target.value }))
-              }
-              style={S.input}
             />
           </div>
           <div style={S.formGroup}>

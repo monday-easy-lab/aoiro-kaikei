@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { getAccountName, getAccountType, makeId } from "../lib/accounts.js";
 import { S, FONT } from "../styles.js";
-import { SectionTitle } from "./ui.jsx";
+import { SectionTitle, AmountInput } from "./ui.jsx";
 
 // ── 支払方法 → 貸方コード ──
 const PAY_METHODS = [
@@ -210,7 +210,7 @@ export default function EasyEntry({ entries, persist, fy }) {
           </div>
           <div style={S.formGroup}>
             <label style={S.label}>金額（円）</label>
-            <input type="number" value={amount} placeholder="10000" onChange={(e) => setAmount(e.target.value)} style={{ ...S.input, fontSize: 18, fontWeight: 700 }} autoFocus />
+            <AmountInput value={amount} onChange={setAmount} />
           </div>
           {showPayMethodSelector(selected) && (
             <div style={{ ...S.formGroup, gridColumn: "1 / -1" }}>
