@@ -48,18 +48,59 @@ function safeEval(expr) {
   } catch { return null; }
 }
 
+const CALC_BTNS = [
+  ["7", "8", "9", "÷"],
+  ["4", "5", "6", "×"],
+  ["1", "2", "3", "−"],
+  ["0", "00", ".", "+"],
+  ["C", "⌫", "", "="],
+];
+
 export function AmountInput({ value, onChange, placeholder }) {
   const [showCalc, setShowCalc] = useState(false);
   const [expr, setExpr] = useState("");
-  const result = safeEval(expr);
+  const [computed, setComputed] = useState(null);
+
+  const display = expr || "0";
+
+  const handleBtn = (btn) => {
+    if (btn === "C") {
+      setExpr("");
+      setComputed(null);
+      return;
+    }
+    if (btn === "⌫") {
+      setExpr((e) => e.slice(0, -1));
+      setComputed(null);
+      return;
+    }
+    if (btn === "=") {
+      const op = expr.replace(/×/g, "*").replace(/÷/g, "/").replace(/−/g, "-");
+      const r = safeEval(op);
+      if (r != null) setComputed(r);
+      return;
+    }
+    setComputed(null);
+    setExpr((e) => e + btn);
+  };
 
   const applyResult = () => {
-    if (result != null && result > 0) {
-      onChange(String(result));
+    const val = computed != null ? computed : safeEval(expr.replace(/×/g, "*").replace(/÷/g, "/").replace(/−/g, "-"));
+    if (val != null && val > 0) {
+      onChange(String(val));
       setShowCalc(false);
       setExpr("");
+      setComputed(null);
     }
   };
+
+  const btnStyle = (btn) => ({
+    padding: "12px 0", border: "1px solid #e2e8f0", borderRadius: 8,
+    fontSize: btn === "⌫" ? 16 : 18, fontWeight: 600, cursor: "pointer",
+    fontFamily: FONT, outline: "none",
+    background: "÷×−+".includes(btn) ? "#eff6ff" : btn === "=" ? "#1d4ed8" : btn === "C" || btn === "⌫" ? "#fef2f2" : "#fff",
+    color: btn === "=" ? "#fff" : "÷×−+".includes(btn) ? "#1d4ed8" : btn === "C" || btn === "⌫" ? "#dc2626" : "#1e293b",
+  });
 
   return (
     <div>
@@ -74,7 +115,7 @@ export function AmountInput({ value, onChange, placeholder }) {
         />
         <button
           type="button"
-          onClick={() => setShowCalc(!showCalc)}
+          onClick={() => { setShowCalc(!showCalc); setExpr(""); setComputed(null); }}
           style={{
             width: 40, height: 40, border: "1px solid #d1d5db", borderRadius: 8,
             background: showCalc ? "#eff6ff" : "#fff", cursor: "pointer",
@@ -88,39 +129,43 @@ export function AmountInput({ value, onChange, placeholder }) {
       </div>
       {showCalc && (
         <div style={{
-          marginTop: 8, padding: "12px 16px", background: "#f8fafc",
-          borderRadius: 10, border: "1px solid #e2e8f0",
+          marginTop: 8, padding: "12px", background: "#f8fafc",
+          borderRadius: 12, border: "1px solid #e2e8f0",
         }}>
-          <p style={{ margin: "0 0 8px", fontSize: 11, color: "#94a3b8" }}>
-            計算式を入力（例: 8000*3, 50000/4, 1200+800）
-          </p>
-          <input
-            type="text"
-            value={expr}
-            placeholder="8000 * 3"
-            onChange={(e) => setExpr(e.target.value)}
-            style={{ ...S.input, fontSize: 16, fontFamily: "monospace", marginBottom: 8 }}
-          />
-          {expr && (
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <span style={{
-                fontSize: 20, fontWeight: 700,
-                color: result != null ? "#1d4ed8" : "#dc2626",
-              }}>
-                {result != null ? `= ¥${fmt(result)}` : "計算できません"}
-              </span>
-              {result != null && result > 0 && (
-                <button
-                  type="button"
-                  onClick={applyResult}
-                  style={{
-                    ...S.btnPrimary, padding: "8px 16px", fontSize: 13,
-                  }}
-                >
-                  この金額を入力
+          <div style={{
+            padding: "10px 14px", background: "#fff", borderRadius: 8,
+            border: "1px solid #e2e8f0", marginBottom: 8, textAlign: "right",
+            minHeight: 48, display: "flex", flexDirection: "column", justifyContent: "center",
+          }}>
+            <p style={{ margin: 0, fontSize: 14, color: "#94a3b8", fontFamily: "monospace" }}>
+              {display}
+            </p>
+            {computed != null && (
+              <p style={{ margin: "2px 0 0", fontSize: 22, fontWeight: 700, color: "#1d4ed8", fontFamily: "monospace" }}>
+                = {fmt(computed)}
+              </p>
+            )}
+          </div>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr 1fr", gap: 6 }}>
+            {CALC_BTNS.flat().map((btn, i) =>
+              btn === "" ? <div key={i} /> : (
+                <button key={i} type="button" onClick={() => handleBtn(btn)} style={btnStyle(btn)}>
+                  {btn}
                 </button>
-              )}
-            </div>
+              )
+            )}
+          </div>
+          {(computed != null || safeEval(expr.replace(/×/g, "*").replace(/÷/g, "/").replace(/−/g, "-")) != null) && (
+            <button
+              type="button"
+              onClick={applyResult}
+              style={{
+                ...S.btnPrimary, width: "100%", marginTop: 8, padding: "10px",
+                fontSize: 14,
+              }}
+            >
+              この金額を入力
+            </button>
           )}
         </div>
       )}
