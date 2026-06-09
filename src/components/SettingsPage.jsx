@@ -288,16 +288,16 @@ export default function SettingsPage({
           ※ 100%の科目は按分なし（全額事業経費）として扱います。確定申告時に損益計算書・所得税計算に反映されます。
         </p>
       </div>
-      
+
       <div style={S.card}>
         <h3 style={S.cardTitle}>📝 確定申告メモ</h3>
         <p style={{ margin: "0 0 8px", fontSize: 12, color: "#64748b" }}>
-          給与所得・副業収入など、事業以外の所得を忘れないようにメモできます。このメモは帳簿や税額計算には反映されません。
+          給与所得や事業帳簿に記録しない収入を忘れないようにメモできます。このメモは帳簿や税額計算には反映されません。
         </p>
         <textarea
           value={settings.taxMemo || ""}
           onChange={(e) => persistSettings({ ...settings, taxMemo: e.target.value })}
-          placeholder={"例:\nタイミー 2026年合計 ¥○○○円（源泉徴収票あり）\nイラストAC 雑所得 ¥○○○円"}
+          placeholder={"例:\nタイミー 2026年合計 ¥○○○円（給与所得）\n単発アルバイト ¥○○○円\n給付金・還付金など"}
           style={{ ...S.input, minHeight: 100, resize: "vertical", fontFamily: FONT, fontSize: 13 }}
         />
       </div>
