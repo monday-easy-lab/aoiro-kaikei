@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import { fmt, makeId } from "../lib/accounts.js";
 import { calcBalances, calcPL, closeYear, ANBUN_TARGET_ACCOUNTS } from "../lib/calc.js";
 import { exportCSV, importCSV, exportBackup, parseBackup } from "../lib/csv.js";
-import { S } from "../styles.js";
+import { S, FONT } from "../styles.js";
 import { SectionTitle, ConfirmModal } from "./ui.jsx";
 
 export default function SettingsPage({
@@ -244,6 +244,7 @@ export default function SettingsPage({
             )}
           </div>
         )}
+        </div>
 
       {/* ── 家事按分 ── */}
       <div style={S.card}>
@@ -500,6 +501,6 @@ export default function SettingsPage({
         />
       )}
     </div>
-     </div>
+     
   );
 }
