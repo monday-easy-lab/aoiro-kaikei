@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://monday-easy-lab.github.io/aoiro-kaikei/sitemap.xml
