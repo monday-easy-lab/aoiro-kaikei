@@ -215,8 +215,13 @@ export default function App() {
       </nav>
 
       <footer style={S.footer}>
-        <p>※ 本ソフトは簡易的な会計補助ツールです。正式な確定申告には税理士にご相談ください。</p>
-      </footer>
+  <p>※ 本ソフトは簡易的な会計補助ツールです。正式な確定申告には税理士にご相談ください。</p>
+  <p style={{ marginTop: 8 }}>
+    <a href="/aoiro-kaikei/blog/" style={{ color: "#6b7280", textDecoration: "underline" }}>
+      📝 ブログ ── 個人事業主の会計と経営のヒント
+    </a>
+  </p>
+</footer>
     </div>
   );
 }
