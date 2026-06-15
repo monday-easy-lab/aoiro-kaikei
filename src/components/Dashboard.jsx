@@ -6,6 +6,12 @@ import { SectionTitle, DashCard } from "./ui.jsx";
 
 const MONTHS = Array.from({ length: 12 }, (_, i) => i + 1);
 
+const GUIDE_LINKS = [
+  { href: "/aoiro-kaikei/blog/kaigyouhi-toha/", icon: "\u{1F680}", title: "開業費とは？", desc: "何を入れる？日付は？" },
+  { href: "/aoiro-kaikei/blog/kaigyouhi-shoukyaku/", icon: "\u{1F4C5}", title: "開業費の償却", desc: "いつ経費にする？" },
+  { href: "/aoiro-kaikei/blog/kaikei-soft-erabi/", icon: "\u{1F4A1}", title: "会計ソフトの選び方", desc: "freee・マネフォ比較" },
+];
+
 export default function Dashboard({ entries, fy, opening, onNavigate }) {
   const monthlyData = useMemo(
     () =>
@@ -46,20 +52,20 @@ export default function Dashboard({ entries, fy, opening, onNavigate }) {
   return (
     <div>
       <SectionTitle
-        icon="📊"
+        icon="\u{1F4CA}"
         title={isPastFY ? `${fy}年度 実績` : "ダッシュボード"}
       />
       <div className="dash-grid" style={S.dashGrid}>
         <DashCard
-          label="💰 手元資金"
+          label="\u{1F4B0} 手元資金"
           value={totalCash}
           color="#059669"
           sub={`現金 ¥${fmt(cashBalance)} ／ 預金 ¥${fmt(bankBalance)}`}
         />
-        <DashCard label="📈 年間売上" value={ytd.totalRevenue} color="#2563eb" />
-        <DashCard label="📉 年間経費" value={ytd.totalExpense} color="#dc2626" />
+        <DashCard label="\u{1F4C8} 年間売上" value={ytd.totalRevenue} color="#2563eb" />
+        <DashCard label="\u{1F4C9} 年間経費" value={ytd.totalExpense} color="#dc2626" />
         <DashCard
-          label="✨ 年間利益"
+          label="\u2728 年間利益"
           value={ytd.netIncome}
           color={ytd.netIncome >= 0 ? "#059669" : "#dc2626"}
         />
@@ -110,6 +116,40 @@ export default function Dashboard({ entries, fy, opening, onNavigate }) {
           ))}
         </div>
       )}
+
+      {/* ── はじめてガイド（ブログ導線） ── */}
+      <div style={{
+        background: "#eff6ff", border: "1px solid #bfdbfe", borderRadius: 14,
+        padding: "16px 18px", marginBottom: 16,
+      }}>
+        <p style={{ margin: "0 0 10px", fontSize: 13, fontWeight: 700, color: "#1e40af" }}>
+          📖 はじめての方へ ── 分からない用語はここで解決
+        </p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: 8 }}>
+          {GUIDE_LINKS.map((g) => (
+            <a
+              key={g.href}
+              href={g.href}
+              target="_blank"
+              rel="noopener"
+              style={{
+                display: "flex", alignItems: "center", gap: 10,
+                padding: "10px 12px", background: "#fff", borderRadius: 10,
+                border: "1px solid #dbeafe", textDecoration: "none",
+                color: "#1e293b", fontFamily: FONT, transition: "border-color 0.15s",
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#3b82f6"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#dbeafe"; }}
+            >
+              <span style={{ fontSize: 22, flexShrink: 0 }}>{g.icon}</span>
+              <div>
+                <p style={{ margin: 0, fontSize: 13, fontWeight: 600, color: "#1d4ed8" }}>{g.title}</p>
+                <p style={{ margin: 0, fontSize: 11, color: "#64748b" }}>{g.desc}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
 
       {cm && (
         <div style={S.card}>
