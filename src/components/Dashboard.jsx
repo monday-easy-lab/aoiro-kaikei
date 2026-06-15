@@ -7,9 +7,9 @@ import { SectionTitle, DashCard } from "./ui.jsx";
 const MONTHS = Array.from({ length: 12 }, (_, i) => i + 1);
 
 const GUIDE_LINKS = [
-  { href: "/aoiro-kaikei/blog/kaigyouhi-toha/", icon: "\u{1F680}", title: "開業費とは？", desc: "何を入れる？日付は？" },
-  { href: "/aoiro-kaikei/blog/kaigyouhi-shoukyaku/", icon: "\u{1F4C5}", title: "開業費の償却", desc: "いつ経費にする？" },
-  { href: "/aoiro-kaikei/blog/kaikei-soft-erabi/", icon: "\u{1F4A1}", title: "会計ソフトの選び方", desc: "freee・マネフォ比較" },
+  { href: "/aoiro-kaikei/blog/kaigyouhi-toha/", icon: "🚀", title: "開業費とは？", desc: "何を入れる？日付は？" },
+  { href: "/aoiro-kaikei/blog/kaigyouhi-shoukyaku/", icon: "📅", title: "開業費の償却", desc: "いつ経費にする？" },
+  { href: "/aoiro-kaikei/blog/kaikei-soft-erabi/", icon: "💡", title: "会計ソフトの選び方", desc: "freee・マネフォ比較" },
 ];
 
 export default function Dashboard({ entries, fy, opening, onNavigate }) {
@@ -52,20 +52,20 @@ export default function Dashboard({ entries, fy, opening, onNavigate }) {
   return (
     <div>
       <SectionTitle
-        icon="\u{1F4CA}"
+        icon="📊"
         title={isPastFY ? `${fy}年度 実績` : "ダッシュボード"}
       />
       <div className="dash-grid" style={S.dashGrid}>
         <DashCard
-          label="\u{1F4B0} 手元資金"
+          label="💰 手元資金"
           value={totalCash}
           color="#059669"
           sub={`現金 ¥${fmt(cashBalance)} ／ 預金 ¥${fmt(bankBalance)}`}
         />
-        <DashCard label="\u{1F4C8} 年間売上" value={ytd.totalRevenue} color="#2563eb" />
-        <DashCard label="\u{1F4C9} 年間経費" value={ytd.totalExpense} color="#dc2626" />
+        <DashCard label="📈 年間売上" value={ytd.totalRevenue} color="#2563eb" />
+        <DashCard label="📉 年間経費" value={ytd.totalExpense} color="#dc2626" />
         <DashCard
-          label="\u2728 年間利益"
+          label="✨ 年間利益"
           value={ytd.netIncome}
           color={ytd.netIncome >= 0 ? "#059669" : "#dc2626"}
         />
