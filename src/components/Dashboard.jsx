@@ -7,6 +7,7 @@ import { SectionTitle, DashCard } from "./ui.jsx";
 const MONTHS = Array.from({ length: 12 }, (_, i) => i + 1);
 
 const GUIDE_LINKS = [
+  { href: "/aoiro-kaikei/blog/aoiro-shinkoku-toha/", icon: "📘", title: "青色申告とは？", desc: "白色との違い・届出" },
   { href: "/aoiro-kaikei/blog/kaigyouhi-toha/", icon: "🚀", title: "開業費とは？", desc: "何を入れる？日付は？" },
   { href: "/aoiro-kaikei/blog/kaigyouhi-shoukyaku/", icon: "📅", title: "開業費の償却", desc: "いつ経費にする？" },
   { href: "/aoiro-kaikei/blog/kaikei-soft-erabi/", icon: "💡", title: "会計ソフトの選び方", desc: "freee・マネフォ比較" },
