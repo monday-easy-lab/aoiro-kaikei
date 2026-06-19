@@ -2,37 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://monday-easy-lab.github.io/aoiro-kaikei/</loc>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://monday-easy-lab.github.io/aoiro-kaikei/blog/</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://monday-easy-lab.github.io/aoiro-kaikei/blog/freee-vs-moneyforward/</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://monday-easy-lab.github.io/aoiro-kaikei/blog/aoiro-shinkoku-toha/</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://monday-easy-lab.github.io/aoiro-kaikei/blog/virtual-office-hikaku/</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://monday-easy-lab.github.io/aoiro-kaikei/blog/kaigyouhi-shoukyaku/</loc>
     <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://monday-easy-lab.github.io/aoiro-kaikei/blog/kaigyouhi-toha/</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://monday-easy-lab.github.io/aoiro-kaikei/blog/kaikei-soft-erabi/</loc>
     <lastmod>2026-06-15</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://monday-easy-lab.github.io/aoiro-kaikei/blog/kaigyouhi-toha/</loc>
-    <lastmod>2026-06-15</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://monday-easy-lab.github.io/aoiro-kaikei/blog/kaigyouhi-shoukyaku/</loc>
-    <lastmod>2026-06-15</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://monday-easy-lab.github.io/aoiro-kaikei/blog/virtual-office-hikaku/</loc>
-    <lastmod>2026-06-16</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://monday-easy-lab.github.io/aoiro-kaikei/blog/aoiro-shinkoku-toha/</loc>
-    <lastmod>2026-06-18</lastmod>
-    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
