@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/png" href="/aoiro-kaikei/favicon.png"/>
+
+  <title>クレカで払った経費、帳簿にどう書く？個人事業主のカード払い仕訳ガイド</title>
+  <meta name="description" content="クレジットカードで経費を払ったとき、帳簿にはいつ・どう書く？「未払金」「事業主借」の使い分け、年末年始の処理、会計ソフトでの連携方法まで、個人事業主が迷うポイントを実体験ベースで解説。"/>
+  <meta name="keywords" content="クレジットカード,経費,仕訳,個人事業主,未払金,事業主借,帳簿,青色申告,確定申告,カード払い"/>
+
+  <meta property="og:title" content="クレカで払った経費、帳簿にどう書く？"/>
+  <meta property="og:description" content="未払金？事業主借？カード払い経費の仕訳を個人事業主目線で解説。"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://monday-easy-lab.github.io/aoiro-kaikei/blog/credit-card-keihi/"/>
+  <meta property="og:image" content="https://monday-easy-lab.github.io/aoiro-kaikei/ogp.png"/>
+  <meta property="og:site_name" content="青色申告かんたん会計"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="canonical" href="https://monday-easy-lab.github.io/aoiro-kaikei/blog/credit-card-keihi/"/>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "クレカで払った経費、帳簿にどう書く？個人事業主のカード払い仕訳ガイド",
+    "description": "クレジットカード払いの経費を帳簿にどう書くか。未払金と事業主借の使い分けを解説。",
+    "datePublished": "2026-07-01",
+    "dateModified": "2026-07-01",
+    "author": { "@type": "Organization", "name": "月曜をラクにする研究所" },
+    "publisher": { "@type": "Organization", "name": "青色申告かんたん会計" }
+  }
+  </script>
+
+  <link rel="stylesheet" href="../blog.css"/>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="/aoiro-kaikei/" class="site-logo">
+        <span class="site-logo-mark">帳</span>
+        <div>
+          <div class="site-logo-text">青色申告かんたん会計</div>
+          <div class="site-logo-sub">ブログ</div>
+        </div>
+      </a>
+      <nav class="site-nav">
+        <a href="/aoiro-kaikei/blog/">記事一覧</a>
+        <a href="/aoiro-kaikei/">アプリを使う</a>
+      </nav>
+    </div>
+  </header>
+
+  <article class="article-wrap">
+
+    <div class="article-date">2026.07.01</div>
+    <h1 class="article-title">クレカで払った経費、帳簿にどう書く？個人事業主のカード払い仕訳ガイド</h1>
+    <p class="article-lead">
+      仕事で使うものをクレジットカードで買った。<br>
+      帳簿に入力しようとして、最初につまずくのがここ。<br><br>
+      <strong>「日付は買った日？　引き落としの日？」</strong><br>
+      <strong>「勘定科目は何を使えばいいの？　未払金？　事業主借？」</strong><br><br>
+      個人事業主がカード払いで経費を処理するとき、パターンは実質3つしかありません。<br>
+      そして、ほとんどの人が使う「一番楽な方法」があります。<br><br>
+      この記事では、カード払いの仕訳を3つのパターン別に整理し、年末年始の注意点と会計ソフトでの扱い方までまとめます。
+    </p>
+
+    <!-- ════════════════════════════════
+         先に結論
+    ═════════════════════════════════ -->
+
+    <div class="cta-box" style="background:#f0fdf4;border-color:#86efac;">
+      <p class="cta-title" style="color:#059669;">先に結論</p>
+      <ul style="margin:0;padding-left:1.2em;font-size:14px;line-height:2;">
+        <li>プライベートのカードで事業経費を払った → <strong>「事業主借」</strong>で処理。これが一番多い</li>
+        <li>事業用カードで事業経費を払った → <strong>「未払金」</strong>で処理（利用日と引き落とし日の2回記帳）</li>
+        <li>日付は原則<strong>「買った日（利用日）」</strong>で記帳する</li>
+        <li>年末年始（12月利用→1月引き落とし）は<strong>年度をまたぐので注意</strong></li>
+        <li>事業用カードを分けると<strong>帳簿がシンプルになる</strong></li>
+      </ul>
+    </div>
+
+    <!-- ════════════════════════════════
+         3つのパターン
+    ═════════════════════════════════ -->
+
+    <h2>カード払い経費の3つのパターン</h2>
+
+    <p>
+      個人事業主がクレジットカードで経費を払ったときの仕訳は、実は3パターンしかありません。
+      「どのカードで」「何を」買ったかで決まります。
+    </p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>カード</th>
+          <th>支払い内容</th>
+          <th>使う勘定科目</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="font-weight:600;">プライベートのカード</td>
+          <td>事業の経費</td>
+          <td>事業主借</td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;">事業用カード</td>
+          <td>事業の経費</td>
+          <td>未払金</td>
+        </tr>
+        <tr>
+          <td style="font-weight:600;">事業用カード</td>
+          <td>プライベートの買い物</td>
+          <td>事業主貸</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      「プライベートのカードでプライベートの買い物」は事業と関係ないので、帳簿に書く必要はありません。
+    </p>
+
+    <!-- ════════════════════════════════
+         パターン①
+    ═════════════════════════════════ -->
+
+    <h2>パターン① プライベートのカードで事業経費を払った ── 「事業主借」</h2>
+
+    <p>
+      <strong>個人事業主の大半はこのパターンです。</strong>
+      事業専用のカードを持っていない場合、プライベートのカードで経費を払うことになります。
+    </p>
+    <p>
+      この場合の仕訳は非常にシンプル。<strong>買った日に1回だけ記帳すればOK</strong>。
+      引き落とし日の仕訳は不要です。
+    </p>
+
+    <h3>仕訳例：プライベートのカードでサーバー代3,000円を支払った</h3>
+    <table class="compare-table">
+      <thead>
+        <tr><th>日付</th><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>7/1（利用日）</td>
+          <td>通信費</td>
+          <td>3,000</td>
+          <td>事業主借</td>
+          <td>3,000</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      「事業主借」は「事業主（自分）からお金を借りた」という意味。
+      プライベートの財布から事業のお金を出してもらった、という処理です。
+    </p>
+    <p>
+      引き落としはプライベートの口座から行われるので、事業の帳簿には関係ありません。
+      だから引き落とし日の仕訳は不要。<strong>1回の記帳で完結する</strong>のが最大のメリットです。
+    </p>
+
+    <div class="insight-box">
+      <div class="insight-icon">💡</div>
+      <p><strong>迷ったら「事業主借」。</strong></p>
+      <p>事業用カードを持っていない個人事業主は、すべてのカード払い経費を「事業主借」で処理できます。これが一番シンプルで、間違いが少ない方法です。</p>
+    </div>
+
+    <!-- ════════════════════════════════
+         パターン②
+    ═════════════════════════════════ -->
+
+    <h2>パターン② 事業用カードで事業経費を払った ── 「未払金」</h2>
+
+    <p>
+      事業専用のクレジットカードを持っていて、事業用口座から引き落とされる場合の処理です。
+      この場合は<strong>利用日と引き落とし日の2回記帳</strong>が必要です。
+    </p>
+
+    <h3>仕訳例：事業用カードで消耗品10,000円を購入。翌月25日に引き落とし</h3>
+    <table class="compare-table">
+      <thead>
+        <tr><th>日付</th><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>7/1（利用日）</td>
+          <td>消耗品費</td>
+          <td>10,000</td>
+          <td>未払金</td>
+          <td>10,000</td>
+        </tr>
+        <tr>
+          <td>8/25（引き落とし日）</td>
+          <td>未払金</td>
+          <td>10,000</td>
+          <td>普通預金</td>
+          <td>10,000</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      1回目：「経費が発生した。でもまだ払ってない（未払金）」<br>
+      2回目：「未払金が口座から引き落とされた」
+    </p>
+    <p>
+      この2ステップ。手間はかかりますが、事業用口座の残高と帳簿が常に一致するメリットがあります。
+      会計ソフトでカード連携していれば、この仕訳は自動で作成されます。
+    </p>
+
+    <h3>簡便法：引き落とし日にまとめて記帳してもOK</h3>
+    <p>
+      実は、<strong>年度をまたがなければ</strong>、引き落とし日にまとめて1回で記帳する方法も認められています。
+    </p>
+    <table class="compare-table">
+      <thead>
+        <tr><th>日付</th><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>8/25（引き落とし日）</td>
+          <td>消耗品費</td>
+          <td>10,000</td>
+          <td>普通預金</td>
+          <td>10,000</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      これなら事業主借と同じく1回の記帳で済みます。
+      ただし12月利用→1月引き落としのような年度またぎではこの簡便法は使えないので注意してください。
+    </p>
+
+    <!-- ════════════════════════════════
+         パターン③
+    ═════════════════════════════════ -->
+
+    <h2>パターン③ 事業用カードでプライベートの買い物をした ── 「事業主貸」</h2>
+
+    <p>
+      事業用カードでうっかりプライベートの買い物をしてしまった場合。
+      または意図的に事業用カードで個人の支出をした場合。
+    </p>
+
+    <h3>仕訳例：事業用カードでプライベートの書籍2,000円を購入</h3>
+    <table class="compare-table">
+      <thead>
+        <tr><th>日付</th><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>7/1（利用日）</td>
+          <td>事業主貸</td>
+          <td>2,000</td>
+          <td>未払金</td>
+          <td>2,000</td>
+        </tr>
+        <tr>
+          <td>8/25（引き落とし日）</td>
+          <td>未払金</td>
+          <td>2,000</td>
+          <td>普通預金</td>
+          <td>2,000</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      「事業主貸」は「事業のお金を事業主（自分）に貸した」という意味。
+      事業のお金で個人の買い物をした、という処理です。
+      なるべく避けたいパターンですが、発生した場合はこう処理します。
+    </p>
+
+    <!-- ════════════════════════════════
+         年末年始
+    ═════════════════════════════════ -->
+
+    <h2>年末年始の注意点 ── 12月利用→1月引き落としの処理</h2>
+
+    <p>
+      カード払いで最も注意が必要なのが<strong>年末年始</strong>。
+      個人事業主の確定申告は1月1日〜12月31日が対象期間なので、12月に使って1月に引き落とされる経費は「年度をまたぐ」ことになります。
+    </p>
+
+    <h3>プライベートカードの場合 → 気にしなくてOK</h3>
+    <p>
+      プライベートカードなら「事業主借」で利用日に1回記帳するだけなので、年度またぎを気にする必要はありません。
+      12月に使ったら12月の経費として記帳して終了。
+    </p>
+
+    <h3>事業用カードの場合 → 未払金で年度をまたぐ</h3>
+    <p>
+      事業用カードの場合、12月利用分の経費は12月に「未払金」として計上。
+      翌年1月の引き落とし日に「未払金を消す」仕訳を入れます。
+      <strong>この場合は簡便法（引き落とし日にまとめて記帳）は使えません。</strong>
+    </p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>日付</th><th>借方</th><th>金額</th><th>貸方</th><th>金額</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>12/15（利用日）</td>
+          <td>消耗品費</td>
+          <td>5,000</td>
+          <td>未払金</td>
+          <td>5,000</td>
+        </tr>
+        <tr>
+          <td>1/25（引き落とし日）</td>
+          <td>未払金</td>
+          <td>5,000</td>
+          <td>普通預金</td>
+          <td>5,000</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      12月の経費はちゃんと12月に計上しないと、その年の確定申告で経費が漏れてしまいます。
+      年末が近づいたら、カード利用分の経費を忘れずに帳簿に入れてください。
+    </p>
+
+    <!-- ════════════════════════════════
+         実体験
+    ═════════════════════════════════ -->
+
+    <h2>【実体験】筆者がカード払いの仕訳で迷ったこと</h2>
+
+    <p>
+      筆者は事業専用のカードを持っておらず、プライベートのカードで事業の経費を払っています。
+      開業当初、一番迷ったのは「未払金と事業主借、どっちを使えばいいの？」でした。
+    </p>
+    <p>
+      答えはシンプルで、プライベートのカードなら「事業主借」、事業用カードなら「未払金」。
+      カードの引き落とし口座が事業用かプライベートかで決まります。
+    </p>
+    <p>
+      プライベートカード＋事業主借なら記帳が1回で済むので、正直めちゃくちゃ楽です。
+      「事業用カードを作ったほうがいい」とよく言われますが、カード払いの仕訳が面倒になるデメリットもある。
+      取引量が少ないうちは、プライベートカード＋事業主借で十分だと思っています。
+    </p>
+
+    <!-- ════════════════════════════════
+         会計ソフト
+    ═════════════════════════════════ -->
+
+    <h2>会計ソフトでカード連携すると仕訳が自動化される</h2>
+
+    <p>
+      freeeやマネーフォワードなどのクラウド会計ソフトは、クレジットカードとの連携機能があります。
+      事業用カードを連携すると、利用明細が自動で取り込まれ、「未払金」の仕訳まで自動で作成されます。
+    </p>
+    <p>
+      ただし注意点もあります。
+    </p>
+    <ul>
+      <li><strong>プライベートカードを連携すると、プライベートの支出まで取り込まれる</strong> → 事業用の支出だけ手動で選別する手間が発生</li>
+      <li><strong>事業専用カードを連携するのが理想</strong> → すべての利用が事業用なので、自動仕訳がそのまま使える</li>
+    </ul>
+    <p>
+      「カード連携で帳簿を自動化したい」なら、事業専用カードを1枚作っておく価値はあります。
+      年会費無料のビジネスカードも増えているので、コストはほぼかかりません。
+    </p>
+
+    <!-- ════════════════════════════════
+         領収書
+    ═════════════════════════════════ -->
+
+    <h2>カード払いの領収書・レシートの扱い</h2>
+
+    <p>
+      クレジットカードで支払った場合、店舗が領収書を発行する義務はありません（カード払いは「信用取引」のため）。
+      ただし、レシートはほぼ必ず発行されます。
+    </p>
+    <p>
+      経費の証拠としては<strong>レシート＋カードの利用明細</strong>をセットで保管するのがベスト。
+      ネット通販などでレシートが出ない場合は、利用明細だけでも証拠として認められます。
+    </p>
+    <p>
+      メルカリなどフリマアプリでの購入の場合は、取引画面のスクショ＋カード明細で代替できます。<br>
+      → <a href="/aoiro-kaikei/blog/mercari-pc-keihi/" style="color:var(--c-accent);">メルカリで買ったパソコンは経費になる？領収書がないときの対処法</a>
+    </p>
+
+    <!-- ════════════════════════════════
+         よくある疑問
+    ═════════════════════════════════ -->
+
+    <h2>よくある疑問</h2>
+
+    <h3>Q. カードのポイントで買い物したら経費になる？</h3>
+    <p>
+      事業用カードのポイントで事業の備品を買った場合、ポイント分を「雑収入」として計上し、全額を経費にする方法と、ポイント分を差し引いた金額だけ経費にする方法があります。
+      少額なら後者のほうがシンプルです。
+    </p>
+
+    <h3>Q. リボ払い・分割払いの場合は？</h3>
+    <p>
+      経費の計上は利用日に全額行います（分割しません）。
+      リボ払いや分割払いの手数料は「支払利息」として別途経費にできます。
+      ただし、手数料が高額になるのでリボ払いは事業用としてはおすすめしません。
+    </p>
+
+    <h3>Q. 家事按分が必要なものをカードで買った場合は？</h3>
+    <p>
+      購入金額全体を一旦帳簿に記帳し、年末の家事按分で事業分だけを経費にします。
+      たとえばプライベート兼用のiPhoneをカードで買った場合、購入時は全額で記帳し、確定申告時に按分割合を適用。<br>
+      → <a href="/aoiro-kaikei/blog/kajianbun-wariai/" style="color:var(--c-accent);">家事按分は何％にする？割合の決め方と実例</a>
+    </p>
+
+    <h3>Q. 事業用口座とプライベート口座を分けていない場合は？</h3>
+    <p>
+      口座を分けていない場合、カード払いのたびに「事業用の支出かどうか」を判断して記帳する必要があります。
+      手間がかかるので、できれば事業用口座を別に作ることをおすすめします。
+      ネット銀行なら口座開設無料で手続きもオンライン完結。事業用カードと紐づければ、帳簿の管理がかなり楽になります。
+    </p>
+
+    <!-- ════════════════════════════════
+         まとめ
+    ═════════════════════════════════ -->
+
+    <h2>まとめ ── プライベートカード＋事業主借が一番楽</h2>
+
+    <ul>
+      <li>プライベートカードで経費 → <strong>「事業主借」で利用日に1回記帳</strong>。引き落とし日の仕訳は不要</li>
+      <li>事業用カードで経費 → <strong>「未払金」で利用日と引き落とし日の2回記帳</strong></li>
+      <li>年度をまたがなければ<strong>引き落とし日にまとめて1回でもOK</strong></li>
+      <li>12月利用→1月引き落としは<strong>必ず12月に経費計上</strong></li>
+      <li>証拠書類は<strong>レシート＋カード利用明細</strong>をセット保管</li>
+      <li>会計ソフトのカード連携を使うなら<strong>事業専用カード</strong>が理想</li>
+    </ul>
+
+    <p>
+      カード払いの仕訳は、一見ややこしく見えますが、自分のパターン（プライベートカードか事業用カードか）を決めてしまえば、あとは毎回同じ処理の繰り返しです。
+      迷ったら「プライベートカード＋事業主借」。これが個人事業主にとって一番シンプルで確実な方法です。
+    </p>
+
+    <div style="background:var(--c-surface);border-radius:12px;padding:20px 24px;margin:28px 0;">
+      <p style="margin:0 0 12px;font-size:14px;font-weight:700;color:var(--c-text);">あわせて読みたい</p>
+      <ul style="margin:0;padding-left:0;list-style:none;font-size:14px;line-height:2.2;">
+        <li>🛒 <a href="/aoiro-kaikei/blog/mercari-pc-keihi/" style="color:var(--c-accent);">メルカリで買ったパソコンは経費になる？領収書がないときの対処法</a></li>
+        <li>📱 <a href="/aoiro-kaikei/blog/iphone-koteishisan/" style="color:var(--c-accent);">iPhoneは固定資産？個人事業主が知るべき「10万円の壁」</a></li>
+        <li>📊 <a href="/aoiro-kaikei/blog/kajianbun-wariai/" style="color:var(--c-accent);">家事按分は何％にする？割合の決め方と実例</a></li>
+        <li>📝 <a href="/aoiro-kaikei/blog/kaigyo-mae-receipt/" style="color:var(--c-accent);">開業前のレシートは使える？開業費のレシート・領収書ルール</a></li>
+      </ul>
+    </div>
+
+    <a href="/aoiro-kaikei/" class="tool-promo" style="margin-top:20px;">
+      <span class="tool-promo-icon">📒</span>
+      <div class="tool-promo-body">
+        <div class="tool-promo-title">カード払いの仕訳もかんたんに</div>
+        「青色申告かんたん会計」── 事業主借も未払金もかんたん入力。複式簿記の仕訳が自動で作れます。</div>
+    </a>
+
+    <div class="cta-box" style="margin-top:24px;">
+      <p class="cta-title">帳簿づけを始める</p>
+      <div class="cta-links">
+        <a href="https://px.a8.net/svt/ejp?a8mat=4B5Q82+92V0NU+3SPO+9FDI8Y" class="cta-link" rel="nofollow sponsored" target="_blank">freee会計の無料体験 →</a>
+        <a href="https://px.a8.net/svt/ejp?a8mat=4B5Q82+8SQNDM+3SPO+C8KZDE" class="cta-link cta-link-sub" rel="nofollow sponsored" target="_blank">マネーフォワードの無料体験 →</a>
+      </div>
+      <img border="0" width="1" height="1" src="https://www12.a8.net/0.gif?a8mat=4B5Q82+92V0NU+3SPO+9FDI8Y" alt="">
+      <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=4B5Q82+8SQNDM+3SPO+C8KZDE" alt="">
+    </div>
+
+  </article>
+
+  <footer class="site-footer">
+    <p><a href="/aoiro-kaikei/">青色申告かんたん会計</a> ── 個人事業主のための無料会計アプリ</p>
+    <p style="margin-top:4px;"><a href="/aoiro-kaikei/blog/">ブログ一覧に戻る</a></p>
+    <p style="margin-top:4px;">&copy; 2026 月曜をラクにする研究所</p>
+    <p style="margin-top:8px;font-size:11px;">※ この記事には広告・アフィリエイトリンクが含まれます。</p>
+  </footer>
+
+</body>
+</html>
