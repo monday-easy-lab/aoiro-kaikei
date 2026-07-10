@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://monday-easy-lab.github.io/aoiro-kaikei/</loc><lastmod>2026-07-06</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://monday-easy-lab.github.io/aoiro-kaikei/blog/</loc><lastmod>2026-07-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://monday-easy-lab.github.io/aoiro-kaikei/</loc><lastmod>2026-07-10</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://monday-easy-lab.github.io/aoiro-kaikei/blog/</loc><lastmod>2026-07-10</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://monday-easy-lab.github.io/aoiro-kaikei/blog/keihi-ichiran/</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://monday-easy-lab.github.io/aoiro-kaikei/blog/delivery-keihi/</loc><lastmod>2026-07-10</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://monday-easy-lab.github.io/aoiro-kaikei/blog/kojin-tatekae/</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://monday-easy-lab.github.io/aoiro-kaikei/blog/ipad-genkashoukyaku/</loc><lastmod>2026-07-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://monday-easy-lab.github.io/aoiro-kaikei/blog/kaikei-soft-nyuryoku-jitsuen/</loc><lastmod>2026-07-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
