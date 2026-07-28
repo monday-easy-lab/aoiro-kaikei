@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/png" href="/aoiro-kaikei/favicon.png"/>
+  <title>仮想通貨の確定申告のやり方｜利益はいくらから？雑所得の計算方法を解説</title>
+  <meta name="description" content="仮想通貨（暗号資産）の利益はいくらから確定申告が必要？雑所得としての計算方法、総平均法と移動平均法の違い、損益計算のやり方を初めての方向けに解説します。"/>
+  <meta name="keywords" content="仮想通貨,確定申告,暗号資産,雑所得,計算方法,総平均法,移動平均法,いくらから,ビットコイン,損益計算"/>
+  <meta property="og:title" content="仮想通貨の確定申告のやり方｜利益はいくらから？雑所得の計算方法を解説"/>
+  <meta property="og:description" content="仮想通貨の利益はいくらから申告が必要？雑所得の計算方法をやさしく解説。"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:url" content="https://monday-easy-lab.github.io/aoiro-kaikei/blog/kasotsuka-kakutei-shinkoku/"/>
+  <meta property="og:image" content="https://monday-easy-lab.github.io/aoiro-kaikei/ogp.png"/>
+  <meta property="og:site_name" content="青色申告かんたん会計"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <link rel="canonical" href="https://monday-easy-lab.github.io/aoiro-kaikei/blog/kasotsuka-kakutei-shinkoku/"/>
+  <link rel="stylesheet" href="../blog.css"/>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="/aoiro-kaikei/" class="site-logo">
+        <span class="site-logo-mark">帳</span>
+        <div>
+          <div class="site-logo-text">青色申告かんたん会計</div>
+          <div class="site-logo-sub">ブログ</div>
+        </div>
+      </a>
+      <nav class="site-nav">
+        <a href="/aoiro-kaikei/blog/">記事一覧</a>
+        <a href="/aoiro-kaikei/">アプリを使う</a>
+      </nav>
+    </div>
+  </header>
+
+  <article class="article-wrap">
+    <p class="article-date">2026.07.25</p>
+
+    <h1 class="article-title">仮想通貨の確定申告のやり方｜利益はいくらから？雑所得の計算方法を解説</h1>
+
+    <p>ビットコインやイーサリアムで利益が出た。<br>喜んだのも束の間、頭をよぎるのは<strong>「これ、確定申告いるよね……？」</strong>という不安。</p>
+    <p>仮想通貨（暗号資産）の税金は、正直に言うと<strong>かなり複雑</strong>です。<br>株やFXとは扱いが違い、計算方法も独特。「よくわからないまま放置」が一番危険な領域です。</p>
+    <p>この記事では、仮想通貨の確定申告について、必要になるライン・税金の仕組み・計算方法を、初めての方向けに整理します。</p>
+
+    <div class="box-summary">
+      <p class="box-summary-title">先に結論</p>
+      <ul>
+        <li>仮想通貨の利益は<strong>「雑所得」</strong>。給与などと合算する総合課税</li>
+        <li>会社員は利益<strong>20万円超</strong>、専業・扶養内は<strong>48万円超</strong>で申告が必要</li>
+        <li>税率は所得に応じて上がり、住民税と合わせ<strong>最大約55%</strong></li>
+        <li>計算方法は<strong>総平均法</strong>（原則）と<strong>移動平均法</strong>の2つ</li>
+        <li>取引所が複数あると計算が一気に複雑になる。<strong>ツールや専門家の活用も検討を</strong></li>
+      </ul>
+    </div>
+
+    <h2>仮想通貨の利益はいくらから申告が必要？</h2>
+
+    <p>仮想通貨で利益が出たら、必ず申告が必要というわけではありません。以下のラインが基準です。</p>
+
+    <table>
+      <tr><th>立場</th><th>申告が必要になるライン</th></tr>
+      <tr><td>会社員（給与所得あり）</td><td>仮想通貨を含む雑所得が年20万円超</td></tr>
+      <tr><td>専業・扶養内（給与なし）</td><td>所得の合計が年48万円超</td></tr>
+      <tr><td>個人事業主</td><td>他の所得と合わせて申告（金額に関わらず申告するのが原則）</td></tr>
+    </table>
+
+    <div class="box-tip">
+      <p>💡 <strong>「利益が出たとき」とは？</strong></p>
+      <p>仮想通貨は、売却したときだけでなく、<strong>別の仮想通貨に交換したとき</strong>、<strong>買い物に使ったとき</strong>にも利益が確定します。「日本円に換えてないから大丈夫」は誤解です。ガチホ（保有し続けているだけ）なら課税されませんが、一度でも動かすと損益が発生します。</p>
+    </div>
+
+    <h2>仮想通貨の税金は「雑所得」── ここが重い</h2>
+
+    <p>仮想通貨の利益は、原則として<strong>雑所得</strong>に分類されます。<br>これが仮想通貨の税金を重くしている最大の理由です。</p>
+
+    <h3>総合課税で、税率が上がっていく</h3>
+    <p>雑所得は給与所得などと合算され、合計額に対して税率がかかります（総合課税）。<br>所得が大きいほど税率が上がる累進課税で、所得税と住民税を合わせると<strong>最大で約55%</strong>。利益の半分以上が税金になることもあります。</p>
+    <p>株式やFXが一律約20%の分離課税なのと比べると、仮想通貨の税負担はかなり重い。この違いを知らずに大きな利益を出すと、納税時に青ざめることになります。</p>
+
+    <h3>損益通算・繰越ができない</h3>
+    <p>さらに厳しいのが、仮想通貨の損失は<strong>他の所得と相殺できない</strong>こと。<br>株なら損失を3年繰り越せますが、仮想通貨（雑所得）にはそれがありません。同じ年の仮想通貨の利益とだけ相殺できます。</p>
+
+    <h2>損益の計算方法 ── 総平均法と移動平均法</h2>
+
+    <p>仮想通貨の所得は「売却額 －  取得原価 － 必要経費」で計算します。<br>このうち「取得原価」の計算に、2つの方法があります。</p>
+
+    <table>
+      <tr><th></th><th>総平均法</th><th>移動平均法</th></tr>
+      <tr><td>計算のタイミング</td><td>年末にまとめて</td><td>購入のたびに</td></tr>
+      <tr><td>計算の手間</td><td>比較的かんたん</td><td>手間がかかる</td></tr>
+      <tr><td>向いている人</td><td>取引回数が少ない</td><td>取引回数が多い</td></tr>
+      <tr><td>届出</td><td>不要（原則こちら）</td><td>税務署への届出が必要</td></tr>
+    </table>
+
+    <p>個人の場合、届出をしなければ<strong>自動的に総平均法</strong>が適用されます。<br>移動平均法を使いたい場合は「所得税の暗号資産の評価方法の届出書」を、確定申告期限までに税務署へ提出する必要があります。</p>
+    <p>一度選んだ計算方法は原則として継続適用（変更には届出が必要）なので、最初にどちらにするか決めておくことが大切です。</p>
+
+    <div class="box-tip">
+      <p>💡 <strong>どちらを選んでも、生涯の合計損益は同じ</strong></p>
+      <p>総平均法と移動平均法は、単年で見ると損益がずれることがありますが、投資を始めてから終えるまでの通算では一致します。違うのは「どの年にいくら計上するか」というタイミングだけです。</p>
+    </div>
+
+    <h2>ここが本当に大変 ── 複数取引所の合算</h2>
+
+    <p>ここまで読んで「思ったより複雑だな」と感じた方も多いと思います。<br>そして現実は、もう少し厄介です。</p>
+
+    <p>多くの人は、複数の取引所を使っています。国内取引所が2〜3社、さらに海外取引所やDeFi、NFT……。<strong>これらすべての取引履歴を集めて、円換算して、合算して損益を出す</strong>必要があります。</p>
+
+    <ul>
+      <li>取引所ごとに履歴のフォーマットが違う</li>
+      <li>海外取引所は日本円換算が自分で必要</li>
+      <li>仮想通貨同士の交換も1件ずつ損益計算</li>
+      <li>ステーキング・エアドロップ・マイニング報酬も所得になる</li>
+      <li>DeFiやNFTは取得原価の把握自体が難しい</li>
+    </ul>
+
+    <p>取引回数が数百〜数千件になると、手作業での計算は現実的ではありません。<br>ここで選択肢は3つに分かれます。</p>
+
+    <h2>損益計算の3つの選択肢</h2>
+
+    <h3>選択肢① 自分で計算する</h3>
+    <p>取引回数が少なく（年に数回程度）、使っている取引所も1つだけなら、国税庁の「暗号資産の計算書」を使って自分で計算できます。<br>ただし、少しでも取引が複雑になると、計算ミスのリスクが跳ね上がります。</p>
+
+    <h3>選択肢② 損益計算ツールを使う</h3>
+    <p>クリプタクトやGtaxといった専用ツールを使えば、取引所の履歴をアップロードするだけで自動計算できます。<br>取引回数が多い人には現実的な選択肢。ただし、ツールの入力・確認作業は自分で行う必要があります。</p>
+
+    <h3>選択肢③ 専門家に任せる</h3>
+    <p>「もう自分では手に負えない」「金額が大きくて間違えたくない」という場合は、仮想通貨に詳しい税理士に相談するのが安全です。</p>
+    <p>仮想通貨の税務は専門性が高く、対応できる税理士は限られています。だからこそ、<strong>仮想通貨を専門にしている税理士</strong>に相談するのが確実です。</p>
+
+    <div class="box-tip">
+      <p>💡 <strong>無料で税務診断してもらう</strong></p>
+      <p>「自分の場合、確定申告が必要なのかどうかもわからない」という段階なら、まず無料診断を受けてみるのも手です。暗号資産の税務を専門とする「クリプト税理士」では、LINEから無料で税務診断を受けられます。相談してから、自分でやるか任せるか判断しても遅くありません。</p>
+      <p><a href="#cta-crypt" >▼ 無料税務診断について（記事末）</a></p>
+    </div>
+
+    <h2>申告しないとどうなる？</h2>
+
+    <p>「バレないだろう」と申告しないのは、非常にリスクが高い選択です。</p>
+    <p>国内の取引所は、税務署からの求めに応じて取引情報を提供しています。無申告が発覚すると、本来の税金に加えて<strong>無申告加算税や延滞税</strong>が課され、悪質と判断されれば重加算税まで科されます。</p>
+    <p>利益が出た年に納税資金を残しておかず、翌年の申告時に払えなくなる──というのも、仮想通貨でよくある失敗です。利益が確定したら、その分の税金は使わずに取っておきましょう。</p>
+
+    <h2>まとめ ── 仮想通貨の確定申告は「早めの準備」がすべて</h2>
+
+    <ul>
+      <li>仮想通貨の利益は<strong>雑所得</strong>。会社員は20万円超、専業は48万円超で申告</li>
+      <li>売却だけでなく<strong>交換・決済でも利益が確定</strong>する</li>
+      <li>税率は総合課税で<strong>最大約55%</strong>。損失の繰越もできない</li>
+      <li>計算方法は<strong>総平均法（原則）</strong>と移動平均法</li>
+      <li>取引所が複数あると計算は一気に複雑化。<strong>ツールや専門家の活用を</strong></li>
+      <li>無申告はペナルティのリスク大。<strong>迷ったら早めに専門家へ相談を</strong></li>
+    </ul>
+
+    <p>仮想通貨の確定申告は、他のどの所得より複雑と言っても過言ではありません。<br>だからこそ、2月に慌てて始めるのではなく、年内から取引履歴を整理しておくことが何より大切です。</p>
+    <p>「自分は申告が必要なのか」「いくらになるのか」がわからない段階なら、まず無料で診断を受けてみて、そこから方針を決めるのが賢い進め方です。</p>
+
+    <h2 id="cta-crypt">仮想通貨の税金、まず無料で診断</h2>
+    <p>暗号資産の税務を専門とする<strong>「クリプト税理士」</strong>では、LINEから<strong>無料の税務診断</strong>が受けられます。<br>「確定申告が必要なのかわからない」「複数の取引所があって計算できない」という方は、まず現状を診断してもらうところから始めてみてください。</p>
+
+    <div class="related-articles">
+      <p><strong>あわせて読みたい</strong></p>
+      <ul>
+        <li>📝 <a href="/aoiro-kaikei/blog/kakutei-shinkoku-yarikata/">個人事業主の確定申告のやり方｜5ステップ完全ガイド</a></li>
+        <li>💴 <a href="/aoiro-kaikei/blog/kyuyo-shotoku/">会社員が副業で確定申告する場合の解説</a></li>
+        <li>📊 <a href="/aoiro-kaikei/blog/keihi-ichiran/">個人事業主の経費にできるもの一覧</a></li>
+        <li>📄 <a href="/aoiro-kaikei/blog/aoiro-shinkoku-toha/">青色申告とは？白色との違い</a></li>
+        <li>🖥️ <a href="/aoiro-kaikei/blog/kaikei-soft-nyuryoku-jitsuen/">【実演】会計ソフトに経費を入力してみた</a></li>
+      </ul>
+    </div>
+
+    <a href="/aoiro-kaikei/" class="tool-promo">
+      <span class="tool-promo-icon">📒</span>
+      <div class="tool-promo-body">
+        <div class="tool-promo-title">事業所得の帳簿づけはこちらで</div>
+        「青色申告かんたん会計」── 事業の経費や売上の記帳を、会員登録なし・無料で練習できます。
+      </div>
+    </a>
+
+    <div class="affiliate-links">
+      <p style="margin-bottom:8px;font-size:13px;color:var(--c-sub);">▼ 仮想通貨の確定申告に不安がある方へ</p>
+      <a href="https://px.a8.net/svt/ejp?a8mat=4B89KX+6V2XLM+5RNA+5YRHE" rel="nofollow">【無料】暗号資産・仮想通貨の税務診断を受ける（LINE） →</a>
+      <p style="margin-top:12px;">
+        <a href="https://px.a8.net/svt/ejp?a8mat=4B89KX+6V2XLM+5RNA+5Z6WX" rel="nofollow"><img border="0" width="100" height="60" alt="暗号資産・仮想通貨の無料税務診断｜クリプト税理士" src="https://www21.a8.net/svt/bgt?aid=260726145415&wid=002&eno=01&mid=s00000026911001004000&mc=1"></a>
+        <img border="0" width="1" height="1" src="https://www15.a8.net/0.gif?a8mat=4B89KX+6V2XLM+5RNA+5Z6WX" alt="">
+      </p>
+    </div>
+
+  </article>
+
+  <footer class="site-footer">
+    <p><a href="/aoiro-kaikei/">青色申告かんたん会計</a> ── 個人事業主のための無料会計アプリ</p>
+    <p style="margin-top:4px;"><a href="/aoiro-kaikei/blog/">ブログ一覧に戻る</a></p>
+    <p style="margin-top:4px;">&copy; 2026 月曜をラクにする研究所</p>
+    <p style="margin-top:8px;font-size:11px;">※ この記事には広告・アフィリエイトリンクが含まれます。</p>
+  </footer>
+
+</body>
+</html>
