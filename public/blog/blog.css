@@ -83,6 +83,9 @@ li{margin-bottom:6px;line-height:1.8}
 .site-footer a{color:var(--c-sub);text-decoration:none}
 .site-footer a:hover{text-decoration:underline}
 
+/* ── Bare h1 inside articles (fallback) ── */
+.article-wrap h1{font-size:24px;font-weight:700;line-height:1.5;margin-bottom:12px;letter-spacing:-.01em}
+
 /* ── Bare tables inside articles (fallback) ── */
 .article-wrap table{width:100%;border-collapse:collapse;margin:0 0 28px;font-size:14px}
 .article-wrap table th{background:var(--c-surface);font-weight:600;text-align:left;padding:10px 12px;border-bottom:2px solid var(--c-border);font-size:13px}
@@ -124,7 +127,7 @@ li{margin-bottom:6px;line-height:1.8}
 
 /* ── Responsive ── */
 @media(max-width:600px){
-  .article-title{font-size:20px}
+  .article-title,.article-wrap h1{font-size:20px}
   h2{font-size:17px}
   .cta-box,.insight-box,.box-summary,.box-tip,.affiliate-links{padding:20px}
   .tool-promo{flex-direction:column;text-align:center}
