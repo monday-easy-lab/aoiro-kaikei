@@ -2,6 +2,7 @@ import { useState, useRef } from "react";
 import { fmt, makeId } from "../lib/accounts.js";
 import { calcBalances, calcPL, closeYear, ANBUN_TARGET_ACCOUNTS } from "../lib/calc.js";
 import { exportCSV, importCSV, exportBackup, parseBackup } from "../lib/csv.js";
+import { track } from "../lib/track.js";
 import { S, FONT } from "../styles.js";
 import { SectionTitle, ConfirmModal } from "./ui.jsx";
 
@@ -345,7 +346,7 @@ export default function SettingsPage({
         >
           <button
             style={S.btnSecondary}
-            onClick={() => exportCSV(entries, settings.fy)}
+            onClick={() => { track("export_csv"); exportCSV(entries, settings.fy); }}
           >
             📥 CSVエクスポート
           </button>
@@ -385,7 +386,7 @@ export default function SettingsPage({
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
           <button
             style={S.btnSecondary}
-            onClick={() => exportBackup(settings, entries, settings.fy)}
+            onClick={() => { track("export_backup"); exportBackup(settings, entries, settings.fy); }}
           >
             💾 バックアップ保存
           </button>

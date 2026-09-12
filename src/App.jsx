@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
 import { currentFY } from "./lib/accounts.js";
 import { loadData, saveData } from "./lib/storage.js";
+import { track, trackActivation } from "./lib/track.js";
 import { S, FONT } from "./styles.js";
 
 import Dashboard from "./components/Dashboard.jsx";
@@ -75,7 +76,14 @@ export default function App() {
   }, []);
 
   const persist = useCallback((ne) => {
-    setEntries(ne);
+    // 仕訳が増えたときだけ「登録」として計測する（編集・削除は除く）
+    setEntries((prev) => {
+      if (ne.length > prev.length) {
+        trackActivation();
+        track("entry_added");
+      }
+      return ne;
+    });
     saveData("aoiro-entries", ne);
   }, []);
 
@@ -95,9 +103,13 @@ export default function App() {
   const activeBottomTab = ["summary", "pl", "bs", "tax"].includes(tab) ? "reports"
   : ["settings", "help"].includes(tab) ? "more" : tab;
 
+  // 到達段階が分かる画面だけ計測する（全タブは取らない）
+  const TRACKED_TABS = ["easy", "journal", "pl", "bs", "tax", "settings"];
+
   const switchTab = (id) => {
     setTab(id);
     setEditId(null);
+    if (TRACKED_TABS.includes(id)) track(`view_${id}`);
   };
 
   if (loading)
@@ -385,6 +397,7 @@ function HelpGuide({ onBack }) {
     ]},
     { id: "backup", title: "🔒 バックアップ", content: [
       "⚠ データはブラウザ内（localStorage）に保存されます。",
+      "会計データがサーバーに送信されることはありません（改善のため、匿名の操作記録のみ集計しています）。",
       "ブラウザデータの削除やPC初期化でデータが消えます。",
       "",
       "設定 → バックアップ保存 で定期的にJSONファイルを保存してください。",
