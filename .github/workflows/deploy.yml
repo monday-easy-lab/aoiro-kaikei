@@ -46,3 +46,19 @@ jobs:
           path: dist
       - id: deployment
         uses: actions/deploy-pages@v5
+
+  indexnow:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Notify IndexNow (Bing etc.)
+        continue-on-error: true
+        run: |
+          KEY=d70de9f660bf45208d978711827e8724
+          HOST=monday-easy-lab.github.io
+          URLS=$(grep -o '<loc>[^<]*</loc>' public/sitemap.xml | sed -e 's/<loc>//' -e 's/<\/loc>//' | sed 's/.*/"&"/' | paste -sd, -)
+          sleep 30
+          curl -sS -o /dev/null -w "IndexNow status: %{http_code}\n" -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "{\"host\":\"$HOST\",\"key\":\"$KEY\",\"keyLocation\":\"https://$HOST/aoiro-kaikei/$KEY.txt\",\"urlList\":[$URLS]}"
