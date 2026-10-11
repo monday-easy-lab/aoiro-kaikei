@@ -134,3 +134,5 @@ li{margin-bottom:6px;line-height:1.8}
   .article-wrap table{font-size:13px}
   .article-wrap table th,.article-wrap table td{padding:8px 10px}
 }
+
+.pr-notice{display:inline-block;margin:0 0 14px;padding:4px 10px;font-size:12px;line-height:1.6;color:var(--c-sub,#64748b);background:var(--c-surface,#f1f5f9);border-radius:6px}
